@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jubin Savla | Full Stack Developer",
-  description: "Portfolio website of Jubin Savla, a Full Stack Developer specializing in web development and cloud solutions.",
+  title: "Jubin Savla | Full Stack Engineer",
+  description: "Portfolio website of Jubin Savla, a Full Stack Engineer specializing in web development and cloud solutions.",
 };
 
 export default function RootLayout({

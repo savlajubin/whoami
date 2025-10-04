@@ -12,7 +12,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div 
           initial={{ opacity: 0 }}

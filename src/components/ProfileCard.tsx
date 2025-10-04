@@ -80,7 +80,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ name, title, bio }) =>
       <div className="relative mt-6 mx-6 h-48 w-full overflow-hidden">
         <div className="relative inset-0 bg-gradient-to-b from-accent-1/40 via-accent-2/20 to-card backdrop-blur-[2px]" />
         <Image
-          src={isDark ? "/profile-dark.png" : "/profile-light.png"}
+          src={isDark ? "./profile-dark.png" : "./profile-light.png"}
           alt={name}
           width={400}
           height={400}

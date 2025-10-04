@@ -7,10 +7,12 @@ import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      <ThemeToggle />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div 
           initial={{ opacity: 0 }}
@@ -21,8 +23,8 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             <ProfileCard
               name="Jubin Savla"
-              title="Full Stack Developer"
-              bio="Passionate about building scalable web applications and solving complex problems with elegant solutions."
+              title="Solution Designer & Senior Engineer"
+              bio="Award-winning software architect with Black-Belt certification, specializing in AI-augmented engineering and enterprise-scale solutions. Recognized innovator with multiple GovHack honors, driving technological advancement in banking and financial services."
             />
             
             <Terminal className="h-full">

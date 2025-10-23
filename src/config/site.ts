@@ -5,7 +5,7 @@ export const siteConfig = {
   url: "https://savlajubin.github.io",
   baseUrl: "https://savlajubin.github.io/whoami",
   ogImage: {
-    url: "https://savlajubin.github.io/whoami/profile-light.png",
+    url: "https://savlajubin.github.io/whoami/profile-light-og-image.png",
     width: 1200,
     height: 630,
     alt: "Jubin Savla - Full Stack Engineer",

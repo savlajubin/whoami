@@ -6,8 +6,6 @@ import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
@@ -23,14 +21,14 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             <ProfileCard
               name="Jubin Savla"
-              title="Solution Designer & Senior Engineer"
+              title="Full Stack Engineer, Gen AI & Automation"
               bio="Award-winning software architect with Black-Belt certification, specializing in AI-augmented engineering and enterprise-scale solutions. Recognized innovator with multiple GovHack honors, driving technological advancement in banking and financial services."
             />
             
             <Terminal className="h-full">
               <div className="space-y-4">
                 <p>$ whoami</p>
-                <p className="pl-4">Jubin Savla | Solution Designer & Senior Engineer</p>
+                <p className="pl-4">Jubin Savla | Full Stack Engineer, Gen AI & Automation</p>
                 
                 <p>$ cat about.txt</p>
                 <div className="pl-4">

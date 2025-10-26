@@ -40,14 +40,15 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 export const Experience: React.FC = () => {
   const experiences = [
     {
-      title: "Solution Designer & Senior Engineer",
-      company: "National Australia Bank (NAB)",
+      title: "Associate Manager, Gen AI & Automation",
+      company: "Accenture Australia",
       duration: "2025 - Present",
       description: [
-        "Led design and delivery of strategic data verification solution integrating multiple enterprise systems",
-        "Built an internal AI accelerator using Amazon Q for solution designs/code scaffolds and automated PRs",
-        "Containerized and deployed services to Kubernetes via enterprise pipelines",
-        "Achieved Black-Belt in NAB's Codility test"
+        "Lead engineer on a flagship enterprise AI platform designed to transform how organizations manage, modernize, and automate their technology landscape.",
+        "Architect and build solutions that leverage generative AI and cloud technologies to streamline software development, automate routine tasks, and enable rapid digital transformation at scale.",
+        "Deliver advanced automation capabilities that empower businesses to improve service quality, reduce operational overhead, and accelerate release cycles—directly driving business efficiency and innovation.",
+        "Engaged in the full product lifecycle: requirements gathering, solution design, hands-on development, deployment, and continuous improvement in a global, client-facing context.",
+        "Mentor engineers, champion technical best practices, and serve as the go-to technical expert for high-impact modernization projects."
       ]
     },
     {

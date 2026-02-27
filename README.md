@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# whoami — Personal Portfolio
 
-## Getting Started
+A modern, fast, and minimal personal portfolio built with Next.js (App Router), TypeScript and TailwindCSS. This repository is a small, focused site showcasing web development work, built with modern tooling and best practices.
 
-First, run the development server:
+- Next.js 15.x (App Router)
+- TypeScript
+- TailwindCSS
+- Framer Motion (animations)
+- Turbopack for fast local builds
+- ESLint for linting and code quality
+
+---
+
+## Quick demo
+
+Open http://localhost:3000 after starting the dev server.
+
+---
+
+## Getting started
+
+Requirements
+- Node 18+ (recommended)
+- npm / pnpm / yarn
+
+Install dependencies:
 
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
+pnpm install
+# or
+yarn
+```
+
+Start development (Turbopack enabled for extremely fast HMR):
+
+```bash
+npm run dev          # uses turbopack in this project
 # or
 pnpm dev
 # or
-bun dev
+yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lint:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- src/
+  - app/              — Next.js App Router pages and layouts (root layout at `layout.tsx`)
+    - page.tsx        — main landing page
+    - globals.css     — global styles & Tailwind base
+  - components/       — UI components (buttons, header, footer, etc.)
+  - lib/              — small utilities/helpers
+- public/             — static assets (images, icons)
+- next.config.ts
+- tsconfig.json
+- postcss.config.mjs
+- eslint.config.mjs
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key patterns & conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Theme and styling
+- Uses CSS variables in `globals.css` to drive theming (e.g. `--background`, `--foreground`).
+- Supports color-scheme via `prefers-color-scheme` with light/dark defaults.
+- TailwindCSS is used as the utility-first styling approach.
+
+Typography
+- Geist fonts are loaded via `next/font/google` and exposed as CSS variables:
+  - `--font-geist-sans`
+  - `--font-geist-mono`
+
+Responsive-first
+- Mobile-first Tailwind classes and layout breakpoints.
+- Example in components/pages:
+  ```tsx
+  <div className="gap-16 sm:p-20">
+    ...
+  </div>
+  ```
+
+Images
+- Use Next.js `Image` component for optimized serving:
+  ```tsx
+  import Image from "next/image"
+
+  <Image
+    src="/avatar.png"
+    alt="Avatar"
+    width={160}
+    height={160}
+    priority
+  />
+  ```
+
+Routing / pages
+- Add routes by creating files under `src/app`. Example `src/app/blog/page.tsx` creates `/blog`.
+
+---
+
+## Common tasks
+
+Add a new page
+1. Create `src/app/<route>/page.tsx`.
+2. Export a default React component.
+
+Example:
+```tsx
+// src/app/about/page.tsx
+export default function AboutPage() {
+  return <main className="p-8">Hello — this is the About page.</main>;
+}
+```
+
+Add a component
+- Create a file under `src/components/` and import it where needed.
+
+Add images
+- Put assets in `public/` and reference them from `next/image` or via `/path`.
+
+Environment variables
+- Add `.env.local` for local secrets. Use `process.env.MY_VAR` in server code.
+- Do not commit `.env.local` to Git.
+
+---
+
+## Development tips
+
+- Use the dev server for HMR and instant feedback.
+- Use the `priority` prop on Image for above-the-fold images to improve Largest Contentful Paint.
+- Prefer semantic HTML and accessible ARIA attributes for improved accessibility and SEO.
+- Keep TypeScript types tight where it helps maintainability, but note strict mode is currently disabled in this project (see `tsconfig.json`).
+
+---
+
+## Troubleshooting
+
+- My dev server fails to start: ensure Node >= 18 and deps installed. Remove node_modules and reinstall if necessary.
+- Type errors on CI: run `npm run build` locally to reproduce and fix TypeScript issues.
+- Tailwind classes not applied: check `globals.css` includes `@tailwind base; @tailwind components; @tailwind utilities;` and that `tailwind.config` includes the `src` paths.
+
+---
+
+## Author / Contact
+
+Repository: [savlajubin/whoami](https://github.com/savlajubin/whoami)
+
+If you'd like to reach out, open an issue or PR on the repo.
